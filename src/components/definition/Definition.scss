@@ -1,0 +1,32 @@
+.definition {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  height: 45vh;
+  border: 10px solid rgb(105, 105, 105);
+  border-radius: 10px;
+  padding: 10px 20px;
+  overflow-x: hidden;
+}
+
+.search-action {
+  font-size: 5vw;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-meaning {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+@media (max-width: 900px) {
+  .definition {
+    height: 40vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}
