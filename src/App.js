@@ -84,7 +84,7 @@ const App = () => {
     }
   };
 
-  console.log(rand);
+  // console.log(rand);
   useEffect(() => {
     randMeaning()
     const interval = setInterval (()=> {
@@ -93,7 +93,7 @@ const App = () => {
     return () => clearInterval(interval)
   }, []);
 
-  console.log(meanings);
+  // console.log(meanings);
   useEffect(() => {
     const apiDictionary = async () => {
       try {
