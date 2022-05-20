@@ -15,6 +15,7 @@ const App = () => {
   const [word, setWord] = useState("");
   const [meanings, setMeanings] = useState([]);
   const [category, setCategory] = useState("en");
+  const [rand, setRand] = useState([]);
   const [lightmode, setLightmode] = useState(false);
 
   const ThemeChange = styled(Switch)(({ theme }) => ({
@@ -64,50 +65,47 @@ const App = () => {
     },
   }));
 
-  const apiDictionary = async () => {
-    try {
-      const rdata = await axios.get("https://random-words-api.vercel.app/word")
-      setRand(rdata.data);
-      
-      const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
-      setMeanings(data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  
-  // console.log(meanings);
-  useEffect(() => {
-    apiDictionary();
-    const interval = setInterval (()=> {
-      apiDictionary();
-    }, 10000)
-    return () => clearInterval(interval)
-  }, [word, category]);
-
-  const [rand, setRand] = useState([]);
-
-  // const randMeaning = async () => {
+  // const apiDictionary = async () => {
   //   try {
-  //     // const data = await axios.get("https://random-words-api.vercel.app/word")
-  //     // setRand(data.data);
-
+  //     const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
+  //     setMeanings(data.data);
   //   } catch (error) {
   //     console.log(error);
-  //     // alert("Oopps!! Connection Failed. Try Reloading")
   //   }
-  // }
-  // console.log(rand);
-  // useEffect(() => {
-  //   randMeaning();
-  //   const interval = setInterval (()=> {
-  //     randMeaning()
-  //   }, 10000)
-  //   return () => clearInterval(interval)
-  // }, []);
-  
-  
+  // };
+  const randMeaning = async () => {
+    try {
+      const data = await axios.get("https://random-words-api.vercel.app/word")
+      setRand(data.data);
 
+    } catch (error) {
+      console.log(error);
+      // alert("Oopps!! Connection Failed. Try Reloading")
+    }
+  };
+
+  console.log(rand);
+  useEffect(() => {
+    randMeaning()
+    const interval = setInterval (()=> {
+      randMeaning()
+    }, 10000)
+    return () => clearInterval(interval)
+  }, []);
+
+  console.log(meanings);
+  useEffect(() => {
+    const apiDictionary = async () => {
+      try {
+        const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
+        setMeanings(data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    apiDictionary()
+  }, [category, word]);
+  
   const bgChange = {
     height: "100vh",
     backgroundImage: lightmode ? `url(${bG2})` : `url(${bG})`,
