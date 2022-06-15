@@ -75,8 +75,8 @@ const App = () => {
   // };
   const randMeaning = async () => {
     try {
-      const data = await axios.get("https://random-words-api.herokuapp.com/w?n=3")
-      // const data = await axios.get("https://random-words-api.vercel.app/word")
+      // const data = await axios.get("https://random-words-api.herokuapp.com/w?n=3")
+      const data = await axios.get("https://random-words-api.vercel.app/word/dutch")
       setRand(data.data);
 
     } catch (error) {
@@ -85,7 +85,7 @@ const App = () => {
     }
   };
 
-  // console.log(rand);
+  console.log(rand);
   useEffect(() => {
     randMeaning()
     const interval = setInterval (()=> {
