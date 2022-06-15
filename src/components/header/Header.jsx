@@ -17,6 +17,7 @@ const Header = ({ category, setCategory, word, setWord, lightmode }) => {
 
   const handleChange = (language) => {
     setCategory(language);
+    setWord("");
   }
 
   return (
