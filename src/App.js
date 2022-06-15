@@ -75,7 +75,7 @@ const App = () => {
   // };
   const randMeaning = async () => {
     try {
-      const data = await axios.get("https://random-words-api.vercel.app/word")
+      const data = await axios.get("https://random-words-api.herokuapp.com/w?n=3")
       // const data = await axios.get("https://random-words-api.vercel.app/word")
       setRand(data.data);
 
