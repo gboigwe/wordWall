@@ -10,9 +10,9 @@ const Random = ({rand, lightmode}) => {
 
   return (
     <div>
-      {rand.map((mew) => (
+      {rand.map((mew, index) => (
         
-        <div className='search-meaning' style={defineStyle}>
+        <div key={index} className='search-meaning' style={defineStyle}>
           { mew.word && (
             <b> New Word: { mew.word }</b> 
           )}
