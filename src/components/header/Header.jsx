@@ -1,4 +1,4 @@
-import { createMuiTheme, MenuItem, TextField, ThemeProvider } from '@material-ui/core';
+import { createTheme, MenuItem, TextField, ThemeProvider } from '@material-ui/core';
 import React from 'react'
 import categories from '../../data/category'
 
@@ -6,7 +6,7 @@ import "./Header.scss";
 
 const Header = ({ category, setCategory, word, setWord, lightmode }) => {
 
-  const darkTheme = createMuiTheme ({
+  const darkTheme = createTheme ({
     palette: {
       primary: {
         main: lightmode ? "#495057" : "#adb5bd",
