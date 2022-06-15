@@ -9,7 +9,7 @@ const Header = ({ category, setCategory, word, setWord, lightmode }) => {
   const darkTheme = createTheme ({
     palette: {
       primary: {
-        main: lightmode ? "#495057" : "#adb5bd",
+        main: lightmode ? "#495057" : "#c5d0db",
       },
       type: lightmode ? "light" : "dark",
     },
@@ -20,7 +20,7 @@ const Header = ({ category, setCategory, word, setWord, lightmode }) => {
   }
 
   return (
-    <div className='header'>
+    <div  className='header'>
         <div className='title'>{word ? word :"WORD WALL"}</div>
       <div className='search-word' >
         <ThemeProvider theme={darkTheme} >
@@ -30,6 +30,7 @@ const Header = ({ category, setCategory, word, setWord, lightmode }) => {
           // label="Standard" 
           value={word}
           onChange={(e)=> setWord(e.target.value)}
+          style={{ backgroundColor: "white" }}
           />
           <TextField
             className='select'
@@ -37,6 +38,7 @@ const Header = ({ category, setCategory, word, setWord, lightmode }) => {
             label="Language"
             value={category}
             onChange={(e) => handleChange(e.target.value)}
+            style={{ backgroundColor: "white" }}
           >
             {categories.map((option) => (
               <MenuItem key={option.label} value={option.label} >{option.value}</MenuItem>
