@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, Definition, Random, Detector } from "./components";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Container } from '@material-ui/core';
+import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import bG from "./assets/bGblack.jpg";
