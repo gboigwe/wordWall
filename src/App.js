@@ -84,7 +84,7 @@ const App = () => {
     }
   };
 
-  console.log(rand);
+  // console.log(rand);
   useEffect(() => {
     randMeaning()
     const interval = setInterval (()=> {
