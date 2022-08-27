@@ -93,7 +93,7 @@ const App = () => {
     return () => clearInterval(interval)
   }, []);
 
-  // console.log(meanings);
+
   useEffect(() => {
     const apiDictionary = async () => {
       try {
